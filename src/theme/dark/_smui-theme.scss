@@ -1,0 +1,39 @@
+@use 'sass:color';
+
+@use '@material/theme/color-palette';
+
+// Svelte Colors! (Dark Theme)
+@use '@material/theme/index'as theme with ($primary: #4c84df,
+  $secondary: color.scale(#F14668, $whiteness: -10%),
+  $surface: color.adjust(color-palette.$grey-900, $blue: +4),
+  $background: #000,
+  $error: color-palette.$red-700);
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body>* {
+  flex-shrink: 0;
+  height: 100%;
+}
+
+html,
+body {
+  background-color: #000;
+  color: theme.$on-surface;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  overflow: auto;
+}
+
+a {
+  color: #40b3ff;
+}
+
+a:visited {
+  color: color.scale(#40b3ff, $lightness: -35%);
+}
